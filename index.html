@@ -46,14 +46,19 @@
             document.getElementById('content').textContent = newText;
         }
 
-        // Simulación de recepción de datos desde un webhook
-        function simulateWebhook() {
-            const simulatedData = "Nueva respuesta recibida!";
-            updateText(simulatedData);
+        // Función para obtener los datos más recientes desde el servidor
+        async function fetchData() {
+            try {
+                const response = await fetch('https://magnificent-dodol-3a7a46.netlify.app/latest'); // Reemplaza con tu URL de Netlify
+                const data = await response.json();
+                updateText(data.text); // Asumiendo que el JSON tiene una propiedad 'text'
+            } catch (error) {
+                console.error('Error al recibir los datos:', error);
+            }
         }
 
-        // Simulación de llamada al webhook cada 5 segundos
-        setInterval(simulateWebhook, 5000);
+        // Llama a la función fetchData cada 5 segundos
+        setInterval(fetchData, 5000);
     </script>
 </body>
 </html>
