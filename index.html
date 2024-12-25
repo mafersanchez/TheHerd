@@ -49,7 +49,7 @@
         // Función para obtener los datos más recientes desde el servidor
         async function fetchData() {
             try {
-                const response = await fetch('https://magnificent-dodol-3a7a46.netlify.app/latest'); // Reemplaza con tu URL de Netlify
+                const response = await fetch('https://mafersanchez.github.io/TheHerd/'); // Reemplaza con tu URL de Netlify
                 const data = await response.json();
                 updateText(data.text); // Asumiendo que el JSON tiene una propiedad 'text'
             } catch (error) {
