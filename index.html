@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Herd - Respuestas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+        #content {
+            margin-top: 5rem;
+            font-size: 2rem;
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>The Herd - Respuestas</header>
+    <div id="content">Esperando datos...</div>
+    <script>
+        // Función para actualizar el texto dinámicamente
+        function updateText(newText) {
+            document.getElementById('content').textContent = newText;
+        }
+
+        // Simulación de recepción de datos desde un webhook
+        function simulateWebhook() {
+            const simulatedData = "Nueva respuesta recibida!";
+            updateText(simulatedData);
+        }
+
+        // Simulación de llamada al webhook cada 5 segundos
+        setInterval(simulateWebhook, 5000);
+    </script>
+</body>
+</html>
